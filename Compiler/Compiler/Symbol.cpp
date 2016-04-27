@@ -1,5 +1,6 @@
 #include "Symbol.h"
 
+#include <cstdlib>
 #include <iostream>
 
 SymbolTableClass::SymbolTableClass() {

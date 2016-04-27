@@ -154,8 +154,7 @@ int main() {
 	///////////
 	// 7,8,9 //
 	///////////
-	std::string input_file = "input.txt";
-	ScannerClass* scanner = new ScannerClass(input_file);
+	ScannerClass* scanner = new ScannerClass();
 	SymbolTableClass* table = new SymbolTableClass();
 	ParserClass* parser = new ParserClass(scanner, table);
 	StartNode* root = parser->Start();

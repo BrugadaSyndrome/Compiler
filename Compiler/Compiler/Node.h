@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "Instructions.h"
-#include "symbol.h"
+#include "Symbol.h"
 
 class Node;
 class StartNode;

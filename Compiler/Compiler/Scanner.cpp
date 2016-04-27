@@ -2,6 +2,8 @@
 #include "Scanner.h"
 #include "StateMachine.h"
 
+#include <cstdlib>
+
 ScannerClass::ScannerClass()
 	:mLineNumber(1)
 {
@@ -13,6 +15,7 @@ ScannerClass::ScannerClass()
 	}
 }
 
+/*
 ScannerClass::ScannerClass(std::string fin)
 	:mLineNumber(1)
 {
@@ -23,6 +26,7 @@ ScannerClass::ScannerClass(std::string fin)
 		exit(-1);
 	}
 }
+*/
 
 ScannerClass::~ScannerClass()
 {

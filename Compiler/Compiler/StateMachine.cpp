@@ -1,6 +1,9 @@
 #include "Debug.h"
 #include "StateMachine.h"
 
+#include <cstdlib>
+#include <stdio.h>
+
 StateMachineClass::StateMachineClass()
 	:mCurrentState(START_STATE)
 {

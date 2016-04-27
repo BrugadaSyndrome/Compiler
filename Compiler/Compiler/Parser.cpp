@@ -2,6 +2,7 @@
 #include "Parser.h"
 #include "Token.h"
 
+#include <cstdlib>
 #include <iostream>
 
 ParserClass::ParserClass(ScannerClass *sc, SymbolTableClass *st) : mScanner(sc), mTable(st) {

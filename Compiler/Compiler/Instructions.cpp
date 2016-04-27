@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include "instructions.h"
+#include "Instructions.h"
 
 const unsigned char PUSH_EBP = 0x55;
 const unsigned char MOV_EBP_ESP1 = 0x8B;
