@@ -12,6 +12,7 @@ const bool interpret = false;
 const bool code = true;
 
 int main() {
+
 	ScannerClass* scanner = new ScannerClass();
 	SymbolTableClass* table = new SymbolTableClass();
 	ParserClass* parser = new ParserClass(scanner, table);

@@ -62,8 +62,7 @@ void SymbolTableClass::PushScope() {
 }
 
 void SymbolTableClass::PopScope() {
-	int begin = mScope.back();
-	for (int i = GetCount(); i > begin; i--) {
+	for (int i = GetCount(); i > mScope.back(); i--) {
 		symbols.pop_back();
 	}
 	mScope.pop_back();

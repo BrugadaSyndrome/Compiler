@@ -7,7 +7,9 @@ void main() {
 		int x;
 		x += 1;
 		y -= 1;
+		int z;
 		cout << x << y << endl;
 	}
 	cout << x << y << endl;
+	cout << z;
 }
