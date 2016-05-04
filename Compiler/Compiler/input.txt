@@ -1,15 +1,10 @@
 void main() {
-	int x;
-	x = 0;
-	int y;
-	y = 0;
-	if (1) {
-		int x;
-		x += 1;
-		y -= 1;
-		int z;
-		cout << x << y << endl;
-	}
-	cout << x << y << endl;
-	cout << z;
+	int m = 1;
+	int n = 1;
+	int p = 0;
+	int q = 1;
+	int r = 1;
+
+	int x = m and n && p or q || r;
+	cout << x << endl;
 }

@@ -92,8 +92,21 @@ StatementNode* ParserClass::Statement() {
 
 StatementNode* ParserClass::Declaration() {
 	IdentifierNode* id = Identifier();
+	TokenType tt = mScanner->PeekNextToken().GetTokenType();
+
+	StatementNode* stmt;
+	if (tt == SEMICOLON_TOKEN) {
+		DEBUGMSGNL("Declaration");
+		stmt = new DeclarationStatementNode(id);
+	}
+	else if (tt == ASSIGNMENT_TOKEN) {
+		DEBUGMSGNL("Declaration Assignment");
+		Match(ASSIGNMENT_TOKEN);
+		ExpressionNode* expression = Expression();
+		stmt = new DeclarationAssignmentStatementNode(id, expression);
+	}
 	Match(SEMICOLON_TOKEN);
-	return new DeclarationStatementNode(id);
+	return stmt;
 }
 
 StatementNode* ParserClass::Assignment() {

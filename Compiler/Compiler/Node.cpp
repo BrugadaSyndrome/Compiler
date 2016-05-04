@@ -78,6 +78,27 @@ void DeclarationStatementNode::Code(InstructionsClass &machineCode) {
 	machineCode.PopAndStore(in->GetIndex());
 }
 
+DeclarationAssignmentStatementNode::~DeclarationAssignmentStatementNode() {
+	INITMSG("Delete DeclarationAssignmentStatementNode");
+	if (in) {
+		delete(in);
+		in = 0;
+	}
+}
+
+void DeclarationAssignmentStatementNode::Interpret() {
+	in->DeclareVariable();
+	in->SetValue(en->Evaluate());
+}
+
+void DeclarationAssignmentStatementNode::Code(InstructionsClass & machineCode) {
+	in->DeclareVariable();
+	machineCode.PushValue(0);
+	machineCode.PopAndStore(in->GetIndex());
+	en->CodeEvaluate(machineCode);
+	machineCode.PopAndStore(in->GetIndex());
+}
+
 AssignmentStatementNode::~AssignmentStatementNode() {
 	INITMSG("Delete AssignmentNode");
 	if (in) {
@@ -91,8 +112,7 @@ AssignmentStatementNode::~AssignmentStatementNode() {
 }
 
 void AssignmentStatementNode::Interpret() {
-	int value = en->Evaluate();
-	in->SetValue(value);
+	in->SetValue(en->Evaluate());
 }
 
 void AssignmentStatementNode::Code(InstructionsClass &machineCode) {

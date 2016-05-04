@@ -27,6 +27,10 @@ void TokenClass::CheckReserved() {
 		mType = FALSE_TOKEN;
 	else if (mLexeme == "endl")
 		mType = ENDL_TOKEN;
+	else if (mLexeme == "and")
+		mType = AND_TOKEN;
+	else if (mLexeme == "or")
+		mType = OR_TOKEN;
 	DEBUGMSGNL(gTokenTypeNames[mType]);
 }
 

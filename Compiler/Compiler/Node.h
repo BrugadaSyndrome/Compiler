@@ -108,6 +108,17 @@ class DeclarationStatementNode : public StatementNode {
 		IdentifierNode *in;
 };
 
+class DeclarationAssignmentStatementNode : public StatementNode {
+	public:
+		DeclarationAssignmentStatementNode(IdentifierNode *nin, ExpressionNode *nen) :in(nin), en(nen) { INITMSG("New DeclarationAssignmentStatementNode"); }
+		~DeclarationAssignmentStatementNode();
+		void Interpret();
+		void Code(InstructionsClass &machineCode);
+	private:
+		IdentifierNode *in;
+		ExpressionNode *en;
+};
+
 class AssignmentStatementNode : public StatementNode {
 	public:
 		AssignmentStatementNode(IdentifierNode *nin, ExpressionNode *nen) :in(nin), en(nen) { INITMSG("New AssignmentStatementNode"); }
